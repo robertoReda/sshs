@@ -1,0 +1,827 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.com/smarthouse/"
+     xml:base="http://example.com/smarthouse/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:saref="https://saref.etsi.org/core/"
+     xmlns:smart="http://example.com/smarthouse/"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:example="http://example.com/">
+    <owl:Ontology rdf:about="http://example.com/smarthouse/">
+        <owl:imports rdf:resource="https://interconnectproject.eu/example/"/>
+        <rdfs:label xml:lang="en">SmartHouse Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/smarthouse/hasWeatherCondition -->
+
+    <owl:ObjectProperty rdf:about="http://example.com/smarthouse/hasWeatherCondition"/>
+    
+
+
+    <!-- http://example.com/smarthouse/isLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://example.com/smarthouse/isLocatedIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/smarthouse/hasAmbientTemperature -->
+
+    <owl:DatatypeProperty rdf:about="http://example.com/smarthouse/hasAmbientTemperature"/>
+    
+
+
+    <!-- http://example.com/smarthouse/hasExternalTemperature -->
+
+    <owl:DatatypeProperty rdf:about="http://example.com/smarthouse/hasExternalTemperature"/>
+    
+
+
+    <!-- http://example.com/smarthouse/hasSunriseTime -->
+
+    <owl:DatatypeProperty rdf:about="http://example.com/smarthouse/hasSunriseTime"/>
+    
+
+
+    <!-- http://example.com/smarthouse/hasSunsetTime -->
+
+    <owl:DatatypeProperty rdf:about="http://example.com/smarthouse/hasSunsetTime"/>
+    
+
+
+    <!-- http://example.com/smarthouse/hasTemperature -->
+
+    <owl:DatatypeProperty rdf:about="http://example.com/smarthouse/hasTemperature"/>
+    
+
+
+    <!-- http://example.com/smarthouse/hasUnixTimestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://example.com/smarthouse/hasUnixTimestamp"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/smarthouse/BuildingElements -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/BuildingElements"/>
+    
+
+
+    <!-- http://example.com/smarthouse/Clear -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/Clear">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/WeatherCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/ClosedWindow -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/ClosedWindow">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/Window"/>
+        <owl:disjointWith rdf:resource="http://example.com/smarthouse/OpenWindow"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/DesiredStates -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/DesiredStates"/>
+    
+
+
+    <!-- http://example.com/smarthouse/Door -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/Door">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/BuildingElements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/EnergyPreservingState -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/EnergyPreservingState"/>
+    
+
+
+    <!-- http://example.com/smarthouse/Green -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/Green">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/EnergyPreservingState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/House -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/House">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/BuildingElements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/OpenWindow -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/OpenWindow">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/Window"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/Outdoor -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/Outdoor">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/BuildingElements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/Probe -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/Probe"/>
+    
+
+
+    <!-- http://example.com/smarthouse/Rain -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/Rain">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/WeatherCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/Red -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/Red">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/EnergyPreservingState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/RedLight -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/RedLight">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/DesiredStates"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/Room -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/Room">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/BuildingElements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/SmartButton -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/SmartButton">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/SmartDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/SmartClock -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/SmartClock">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/SmartDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/SmartDevice -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/SmartDevice"/>
+    
+
+
+    <!-- http://example.com/smarthouse/SmartLock -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/SmartLock">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/SmartDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/SmartPresence -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/SmartPresence">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/SmartDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/SmartWeatherStation -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/SmartWeatherStation">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/SmartDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/Tenant -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/Tenant">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/BuildingElements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/smarthouse/WeatherCondition -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/WeatherCondition"/>
+    
+
+
+    <!-- http://example.com/smarthouse/Window -->
+
+    <owl:Class rdf:about="http://example.com/smarthouse/Window">
+        <rdfs:subClassOf rdf:resource="http://example.com/smarthouse/BuildingElements"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/smarthouse/Tenant -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/smarthouse/Tenant">
+        <rdf:type rdf:resource="http://example.com/smarthouse/Tenant"/>
+        <isLocatedIn rdf:resource="http://example.com/Bedroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/smarthouse/WeatherConditionClear -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/smarthouse/WeatherConditionClear">
+        <rdf:type rdf:resource="http://example.com/smarthouse/Clear"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/smarthouse/WeatherConditionRain -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/smarthouse/WeatherConditionRain">
+        <rdf:type rdf:resource="http://example.com/smarthouse/Rain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://example.com/smarthouse/window">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/room">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/clock">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/clockTime">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/doorbell">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/bellTime">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/elapsedTime">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/tenant">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/light">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/state">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/thermomiter">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/measurement">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/smarthouse/temperature">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Closed windows don&apos;t waste energy</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/ClosedWindow"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/window"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://example.com/smarthouse/isLocatedIn"/>
+                                <swrl:argument1 rdf:resource="http://example.com/smarthouse/window"/>
+                                <swrl:argument2 rdf:resource="http://example.com/smarthouse/room"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/Green"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/room"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Someone&apos;s at the door - Light Signaling</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/SmartClock"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/clock"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://example.com/smarthouse/hasUnixTimestamp"/>
+                                <swrl:argument1 rdf:resource="http://example.com/smarthouse/clock"/>
+                                <swrl:argument2 rdf:resource="http://example.com/smarthouse/clockTime"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/SmartButton"/>
+                                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/doorbell"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://example.com/smarthouse/hasUnixTimestamp"/>
+                                                <swrl:argument1 rdf:resource="http://example.com/smarthouse/doorbell"/>
+                                                <swrl:argument2 rdf:resource="http://example.com/smarthouse/bellTime"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#subtract"/>
+                                                        <swrl:arguments rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="http://example.com/smarthouse/elapsedTime"/>
+                                                            <rdf:Description rdf:about="http://example.com/smarthouse/clockTime"/>
+                                                            <rdf:Description rdf:about="http://example.com/smarthouse/bellTime"/>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                                                <swrl:arguments>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:resource="http://example.com/smarthouse/elapsedTime"/>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</rdf:first>
+                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </swrl:arguments>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/Tenant"/>
+                                                                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/tenant"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://example.com/smarthouse/isLocatedIn"/>
+                                                                                <swrl:argument1 rdf:resource="http://example.com/smarthouse/tenant"/>
+                                                                                <swrl:argument2 rdf:resource="http://example.com/smarthouse/room"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                        <swrl:classPredicate rdf:resource="https://saref.etsi.org/core/LightSwitch"/>
+                                                                                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/light"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                <swrl:propertyPredicate rdf:resource="http://example.com/smarthouse/isLocatedIn"/>
+                                                                                                <swrl:argument1 rdf:resource="http://example.com/smarthouse/light"/>
+                                                                                                <swrl:argument2 rdf:resource="http://example.com/smarthouse/room"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/RedLight"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/light"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Close Window</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/Window"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/window"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://saref.etsi.org/core/hasState"/>
+                                <swrl:argument1 rdf:resource="http://example.com/smarthouse/window"/>
+                                <swrl:argument2 rdf:resource="http://example.com/smarthouse/state"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="https://saref.etsi.org/core/CloseState"/>
+                                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/state"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/ClosedWindow"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/window"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Open Window</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/Window"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/window"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://saref.etsi.org/core/hasState"/>
+                                <swrl:argument1 rdf:resource="http://example.com/smarthouse/window"/>
+                                <swrl:argument2 rdf:resource="http://example.com/smarthouse/state"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="https://saref.etsi.org/core/OpenState"/>
+                                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/state"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/OpenWindow"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/window"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Room Temperature</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://saref.etsi.org/core/TemperatureSensor"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/thermomiter"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://saref.etsi.org/core/makesMeasurement"/>
+                                <swrl:argument1 rdf:resource="http://example.com/smarthouse/thermomiter"/>
+                                <swrl:argument2 rdf:resource="http://example.com/smarthouse/measurement"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://saref.etsi.org/core/hasValue"/>
+                                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/measurement"/>
+                                        <swrl:argument2 rdf:resource="http://example.com/smarthouse/temperature"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://example.com/smarthouse/isLocatedIn"/>
+                                                <swrl:argument1 rdf:resource="http://example.com/smarthouse/thermomiter"/>
+                                                <swrl:argument2 rdf:resource="http://example.com/smarthouse/room"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://example.com/smarthouse/hasAmbientTemperature"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/room"/>
+                        <swrl:argument2 rdf:resource="http://example.com/smarthouse/temperature"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Open windows waste energy</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/OpenWindow"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/window"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://example.com/smarthouse/isLocatedIn"/>
+                                <swrl:argument1 rdf:resource="http://example.com/smarthouse/window"/>
+                                <swrl:argument2 rdf:resource="http://example.com/smarthouse/room"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/smarthouse/Red"/>
+                        <swrl:argument1 rdf:resource="http://example.com/smarthouse/room"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

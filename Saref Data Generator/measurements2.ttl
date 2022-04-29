@@ -1,0 +1,2608 @@
+
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix om: <http://www.wurvoc.org/vocabularies/om-1.8/> .
+@prefix ex: <http://example.com/> .
+@prefix smart: <http://example.com/smarthouse/> .
+
+# Addons
+
+<https://interconnectproject.eu/example/> rdf:type owl:Ontology ;
+owl:imports <https://saref.etsi.org/core/> ;		
+.
+
+om:degree_Celsius rdf:type saref:TemperatureUnit ;
+					        rdfs:label "Degree Celsius"
+.
+
+ex:OnState rdf:type saref:OnState .
+ex:OffState rdf:type saref:OffState .
+ex:CloseState rdf:type saref:CloseState .
+ex:OpenState rdf:type saref:OpenState .
+
+ex:House rdf:type saref:FeatureOfInterest ;
+         rdf:type smart:House ;
+.
+
+ex:LivingRoom rdf:type saref:FeatureOfInterest ;
+              rdf:type smart:Room 
+.
+ex:Bedroom rdf:type saref:FeatureOfInterest  ;
+              rdf:type smart:Room 
+.
+ex:Kitchen rdf:type saref:FeatureOfInterest  ;
+              rdf:type smart:Room 
+.
+ex:Entrance rdf:type saref:FeatureOfInterest  ;
+              rdf:type smart:Room 
+.
+ex:Terrace rdf:type saref:FeatureOfInterest  ;
+              rdf:type smart:Outdoor 
+.
+ex:UtilityRoom rdf:type saref:FeatureOfInterest  ;
+              rdf:type smart:Room 
+.
+
+ex:MainClock rdf:type smart:SmartClock ;
+             saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+             smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:LK1E rdf:type smart:SmartLock ;
+        saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+        smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+        saref:hasState ex:CloseState ;
+        smart:isLocatedIn ex:Entrance ;
+.
+
+#-----------
+
+
+ex:CO2_1 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_1_m1 ;
+      smart:isLocatedIn ex:R1 ;			
+.
+
+ex:CO2_1_m1 rdf:type saref:Measurement;
+			saref:hasValue "2186"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_1 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R1 ;
+.
+
+ex:CO2_2 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_2_m1 ;
+      smart:isLocatedIn ex:R2 ;			
+.
+
+ex:CO2_2_m1 rdf:type saref:Measurement;
+			saref:hasValue "275"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_2 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R2 ;
+.
+
+ex:CO2_3 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_3_m1 ;
+      smart:isLocatedIn ex:R3 ;			
+.
+
+ex:CO2_3_m1 rdf:type saref:Measurement;
+			saref:hasValue "1863"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_3 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R3 ;
+.
+
+ex:CO2_4 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_4_m1 ;
+      smart:isLocatedIn ex:R4 ;			
+.
+
+ex:CO2_4_m1 rdf:type saref:Measurement;
+			saref:hasValue "2480"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_4 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R4 ;
+.
+
+ex:CO2_5 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_5_m1 ;
+      smart:isLocatedIn ex:R5 ;			
+.
+
+ex:CO2_5_m1 rdf:type saref:Measurement;
+			saref:hasValue "3719"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_5 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R5 ;
+.
+
+ex:CO2_6 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_6_m1 ;
+      smart:isLocatedIn ex:R6 ;			
+.
+
+ex:CO2_6_m1 rdf:type saref:Measurement;
+			saref:hasValue "1814"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_6 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R6 ;
+.
+
+ex:CO2_7 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_7_m1 ;
+      smart:isLocatedIn ex:R7 ;			
+.
+
+ex:CO2_7_m1 rdf:type saref:Measurement;
+			saref:hasValue "4329"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_7 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R7 ;
+.
+
+ex:CO2_8 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_8_m1 ;
+      smart:isLocatedIn ex:R8 ;			
+.
+
+ex:CO2_8_m1 rdf:type saref:Measurement;
+			saref:hasValue "4956"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_8 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R8 ;
+.
+
+ex:CO2_9 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_9_m1 ;
+      smart:isLocatedIn ex:R9 ;			
+.
+
+ex:CO2_9_m1 rdf:type saref:Measurement;
+			saref:hasValue "4750"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_9 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R9 ;
+.
+
+ex:CO2_10 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_10_m1 ;
+      smart:isLocatedIn ex:R10 ;			
+.
+
+ex:CO2_10_m1 rdf:type saref:Measurement;
+			saref:hasValue "4511"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_10 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R10 ;
+.
+
+ex:CO2_11 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_11_m1 ;
+      smart:isLocatedIn ex:R11 ;			
+.
+
+ex:CO2_11_m1 rdf:type saref:Measurement;
+			saref:hasValue "2136"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_11 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R11 ;
+.
+
+ex:CO2_12 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_12_m1 ;
+      smart:isLocatedIn ex:R12 ;			
+.
+
+ex:CO2_12_m1 rdf:type saref:Measurement;
+			saref:hasValue "1266"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_12 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R12 ;
+.
+
+ex:CO2_13 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_13_m1 ;
+      smart:isLocatedIn ex:R13 ;			
+.
+
+ex:CO2_13_m1 rdf:type saref:Measurement;
+			saref:hasValue "2863"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_13 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R13 ;
+.
+
+ex:CO2_14 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_14_m1 ;
+      smart:isLocatedIn ex:R14 ;			
+.
+
+ex:CO2_14_m1 rdf:type saref:Measurement;
+			saref:hasValue "2568"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_14 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R14 ;
+.
+
+ex:CO2_15 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_15_m1 ;
+      smart:isLocatedIn ex:R15 ;			
+.
+
+ex:CO2_15_m1 rdf:type saref:Measurement;
+			saref:hasValue "3196"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_15 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R15 ;
+.
+
+ex:CO2_16 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_16_m1 ;
+      smart:isLocatedIn ex:R16 ;			
+.
+
+ex:CO2_16_m1 rdf:type saref:Measurement;
+			saref:hasValue "4200"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_16 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R16 ;
+.
+
+ex:CO2_17 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_17_m1 ;
+      smart:isLocatedIn ex:R17 ;			
+.
+
+ex:CO2_17_m1 rdf:type saref:Measurement;
+			saref:hasValue "4899"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_17 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R17 ;
+.
+
+ex:CO2_18 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_18_m1 ;
+      smart:isLocatedIn ex:R18 ;			
+.
+
+ex:CO2_18_m1 rdf:type saref:Measurement;
+			saref:hasValue "4695"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_18 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R18 ;
+.
+
+ex:CO2_19 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_19_m1 ;
+      smart:isLocatedIn ex:R19 ;			
+.
+
+ex:CO2_19_m1 rdf:type saref:Measurement;
+			saref:hasValue "3093"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_19 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R19 ;
+.
+
+ex:CO2_20 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_20_m1 ;
+      smart:isLocatedIn ex:R20 ;			
+.
+
+ex:CO2_20_m1 rdf:type saref:Measurement;
+			saref:hasValue "4875"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_20 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R20 ;
+.
+
+ex:CO2_21 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_21_m1 ;
+      smart:isLocatedIn ex:R21 ;			
+.
+
+ex:CO2_21_m1 rdf:type saref:Measurement;
+			saref:hasValue "3482"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_21 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R21 ;
+.
+
+ex:CO2_22 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_22_m1 ;
+      smart:isLocatedIn ex:R22 ;			
+.
+
+ex:CO2_22_m1 rdf:type saref:Measurement;
+			saref:hasValue "4565"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_22 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R22 ;
+.
+
+ex:CO2_23 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_23_m1 ;
+      smart:isLocatedIn ex:R23 ;			
+.
+
+ex:CO2_23_m1 rdf:type saref:Measurement;
+			saref:hasValue "830"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_23 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R23 ;
+.
+
+ex:CO2_24 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_24_m1 ;
+      smart:isLocatedIn ex:R24 ;			
+.
+
+ex:CO2_24_m1 rdf:type saref:Measurement;
+			saref:hasValue "937"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_24 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R24 ;
+.
+
+ex:CO2_25 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_25_m1 ;
+      smart:isLocatedIn ex:R25 ;			
+.
+
+ex:CO2_25_m1 rdf:type saref:Measurement;
+			saref:hasValue "1153"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_25 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R25 ;
+.
+
+ex:CO2_26 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_26_m1 ;
+      smart:isLocatedIn ex:R26 ;			
+.
+
+ex:CO2_26_m1 rdf:type saref:Measurement;
+			saref:hasValue "4566"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_26 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R26 ;
+.
+
+ex:CO2_27 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_27_m1 ;
+      smart:isLocatedIn ex:R27 ;			
+.
+
+ex:CO2_27_m1 rdf:type saref:Measurement;
+			saref:hasValue "3603"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_27 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R27 ;
+.
+
+ex:CO2_28 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_28_m1 ;
+      smart:isLocatedIn ex:R28 ;			
+.
+
+ex:CO2_28_m1 rdf:type saref:Measurement;
+			saref:hasValue "2671"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_28 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R28 ;
+.
+
+ex:CO2_29 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_29_m1 ;
+      smart:isLocatedIn ex:R29 ;			
+.
+
+ex:CO2_29_m1 rdf:type saref:Measurement;
+			saref:hasValue "1344"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_29 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R29 ;
+.
+
+ex:CO2_30 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_30_m1 ;
+      smart:isLocatedIn ex:R30 ;			
+.
+
+ex:CO2_30_m1 rdf:type saref:Measurement;
+			saref:hasValue "857"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_30 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R30 ;
+.
+
+ex:CO2_31 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_31_m1 ;
+      smart:isLocatedIn ex:R31 ;			
+.
+
+ex:CO2_31_m1 rdf:type saref:Measurement;
+			saref:hasValue "2512"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_31 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R31 ;
+.
+
+ex:CO2_32 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_32_m1 ;
+      smart:isLocatedIn ex:R32 ;			
+.
+
+ex:CO2_32_m1 rdf:type saref:Measurement;
+			saref:hasValue "3247"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_32 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R32 ;
+.
+
+ex:CO2_33 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_33_m1 ;
+      smart:isLocatedIn ex:R33 ;			
+.
+
+ex:CO2_33_m1 rdf:type saref:Measurement;
+			saref:hasValue "229"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_33 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R33 ;
+.
+
+ex:CO2_34 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_34_m1 ;
+      smart:isLocatedIn ex:R34 ;			
+.
+
+ex:CO2_34_m1 rdf:type saref:Measurement;
+			saref:hasValue "956"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_34 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R34 ;
+.
+
+ex:CO2_35 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_35_m1 ;
+      smart:isLocatedIn ex:R35 ;			
+.
+
+ex:CO2_35_m1 rdf:type saref:Measurement;
+			saref:hasValue "1530"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_35 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R35 ;
+.
+
+ex:CO2_36 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_36_m1 ;
+      smart:isLocatedIn ex:R36 ;			
+.
+
+ex:CO2_36_m1 rdf:type saref:Measurement;
+			saref:hasValue "4957"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_36 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R36 ;
+.
+
+ex:CO2_37 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_37_m1 ;
+      smart:isLocatedIn ex:R37 ;			
+.
+
+ex:CO2_37_m1 rdf:type saref:Measurement;
+			saref:hasValue "2506"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_37 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R37 ;
+.
+
+ex:CO2_38 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_38_m1 ;
+      smart:isLocatedIn ex:R38 ;			
+.
+
+ex:CO2_38_m1 rdf:type saref:Measurement;
+			saref:hasValue "3215"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_38 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R38 ;
+.
+
+ex:CO2_39 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_39_m1 ;
+      smart:isLocatedIn ex:R39 ;			
+.
+
+ex:CO2_39_m1 rdf:type saref:Measurement;
+			saref:hasValue "4026"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_39 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R39 ;
+.
+
+ex:CO2_40 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_40_m1 ;
+      smart:isLocatedIn ex:R40 ;			
+.
+
+ex:CO2_40_m1 rdf:type saref:Measurement;
+			saref:hasValue "3479"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_40 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R40 ;
+.
+
+ex:CO2_41 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_41_m1 ;
+      smart:isLocatedIn ex:R41 ;			
+.
+
+ex:CO2_41_m1 rdf:type saref:Measurement;
+			saref:hasValue "3589"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_41 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R41 ;
+.
+
+ex:CO2_42 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_42_m1 ;
+      smart:isLocatedIn ex:R42 ;			
+.
+
+ex:CO2_42_m1 rdf:type saref:Measurement;
+			saref:hasValue "3947"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_42 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R42 ;
+.
+
+ex:CO2_43 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_43_m1 ;
+      smart:isLocatedIn ex:R43 ;			
+.
+
+ex:CO2_43_m1 rdf:type saref:Measurement;
+			saref:hasValue "2722"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_43 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R43 ;
+.
+
+ex:CO2_44 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_44_m1 ;
+      smart:isLocatedIn ex:R44 ;			
+.
+
+ex:CO2_44_m1 rdf:type saref:Measurement;
+			saref:hasValue "173"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_44 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R44 ;
+.
+
+ex:CO2_45 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_45_m1 ;
+      smart:isLocatedIn ex:R45 ;			
+.
+
+ex:CO2_45_m1 rdf:type saref:Measurement;
+			saref:hasValue "1536"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_45 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R45 ;
+.
+
+ex:CO2_46 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_46_m1 ;
+      smart:isLocatedIn ex:R46 ;			
+.
+
+ex:CO2_46_m1 rdf:type saref:Measurement;
+			saref:hasValue "4493"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_46 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R46 ;
+.
+
+ex:CO2_47 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_47_m1 ;
+      smart:isLocatedIn ex:R47 ;			
+.
+
+ex:CO2_47_m1 rdf:type saref:Measurement;
+			saref:hasValue "1662"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_47 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R47 ;
+.
+
+ex:CO2_48 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_48_m1 ;
+      smart:isLocatedIn ex:R48 ;			
+.
+
+ex:CO2_48_m1 rdf:type saref:Measurement;
+			saref:hasValue "4515"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_48 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R48 ;
+.
+
+ex:CO2_49 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_49_m1 ;
+      smart:isLocatedIn ex:R49 ;			
+.
+
+ex:CO2_49_m1 rdf:type saref:Measurement;
+			saref:hasValue "900"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_49 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R49 ;
+.
+
+ex:CO2_50 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_50_m1 ;
+      smart:isLocatedIn ex:R50 ;			
+.
+
+ex:CO2_50_m1 rdf:type saref:Measurement;
+			saref:hasValue "4205"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_50 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R50 ;
+.
+
+ex:CO2_51 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_51_m1 ;
+      smart:isLocatedIn ex:R51 ;			
+.
+
+ex:CO2_51_m1 rdf:type saref:Measurement;
+			saref:hasValue "4725"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_51 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R51 ;
+.
+
+ex:CO2_52 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_52_m1 ;
+      smart:isLocatedIn ex:R52 ;			
+.
+
+ex:CO2_52_m1 rdf:type saref:Measurement;
+			saref:hasValue "4246"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_52 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R52 ;
+.
+
+ex:CO2_53 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_53_m1 ;
+      smart:isLocatedIn ex:R53 ;			
+.
+
+ex:CO2_53_m1 rdf:type saref:Measurement;
+			saref:hasValue "3441"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_53 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R53 ;
+.
+
+ex:CO2_54 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_54_m1 ;
+      smart:isLocatedIn ex:R54 ;			
+.
+
+ex:CO2_54_m1 rdf:type saref:Measurement;
+			saref:hasValue "1012"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_54 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R54 ;
+.
+
+ex:CO2_55 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_55_m1 ;
+      smart:isLocatedIn ex:R55 ;			
+.
+
+ex:CO2_55_m1 rdf:type saref:Measurement;
+			saref:hasValue "824"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_55 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R55 ;
+.
+
+ex:CO2_56 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_56_m1 ;
+      smart:isLocatedIn ex:R56 ;			
+.
+
+ex:CO2_56_m1 rdf:type saref:Measurement;
+			saref:hasValue "175"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_56 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R56 ;
+.
+
+ex:CO2_57 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_57_m1 ;
+      smart:isLocatedIn ex:R57 ;			
+.
+
+ex:CO2_57_m1 rdf:type saref:Measurement;
+			saref:hasValue "2703"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_57 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R57 ;
+.
+
+ex:CO2_58 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_58_m1 ;
+      smart:isLocatedIn ex:R58 ;			
+.
+
+ex:CO2_58_m1 rdf:type saref:Measurement;
+			saref:hasValue "1214"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_58 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R58 ;
+.
+
+ex:CO2_59 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_59_m1 ;
+      smart:isLocatedIn ex:R59 ;			
+.
+
+ex:CO2_59_m1 rdf:type saref:Measurement;
+			saref:hasValue "142"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_59 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R59 ;
+.
+
+ex:CO2_60 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_60_m1 ;
+      smart:isLocatedIn ex:R60 ;			
+.
+
+ex:CO2_60_m1 rdf:type saref:Measurement;
+			saref:hasValue "1690"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_60 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R60 ;
+.
+
+ex:CO2_61 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_61_m1 ;
+      smart:isLocatedIn ex:R61 ;			
+.
+
+ex:CO2_61_m1 rdf:type saref:Measurement;
+			saref:hasValue "3537"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_61 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R61 ;
+.
+
+ex:CO2_62 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_62_m1 ;
+      smart:isLocatedIn ex:R62 ;			
+.
+
+ex:CO2_62_m1 rdf:type saref:Measurement;
+			saref:hasValue "1171"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_62 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R62 ;
+.
+
+ex:CO2_63 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_63_m1 ;
+      smart:isLocatedIn ex:R63 ;			
+.
+
+ex:CO2_63_m1 rdf:type saref:Measurement;
+			saref:hasValue "2185"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_63 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R63 ;
+.
+
+ex:CO2_64 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_64_m1 ;
+      smart:isLocatedIn ex:R64 ;			
+.
+
+ex:CO2_64_m1 rdf:type saref:Measurement;
+			saref:hasValue "3878"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_64 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R64 ;
+.
+
+ex:CO2_65 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_65_m1 ;
+      smart:isLocatedIn ex:R65 ;			
+.
+
+ex:CO2_65_m1 rdf:type saref:Measurement;
+			saref:hasValue "4429"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_65 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R65 ;
+.
+
+ex:CO2_66 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_66_m1 ;
+      smart:isLocatedIn ex:R66 ;			
+.
+
+ex:CO2_66_m1 rdf:type saref:Measurement;
+			saref:hasValue "4208"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_66 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R66 ;
+.
+
+ex:CO2_67 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_67_m1 ;
+      smart:isLocatedIn ex:R67 ;			
+.
+
+ex:CO2_67_m1 rdf:type saref:Measurement;
+			saref:hasValue "4667"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_67 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R67 ;
+.
+
+ex:CO2_68 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_68_m1 ;
+      smart:isLocatedIn ex:R68 ;			
+.
+
+ex:CO2_68_m1 rdf:type saref:Measurement;
+			saref:hasValue "3825"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_68 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R68 ;
+.
+
+ex:CO2_69 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_69_m1 ;
+      smart:isLocatedIn ex:R69 ;			
+.
+
+ex:CO2_69_m1 rdf:type saref:Measurement;
+			saref:hasValue "1418"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_69 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R69 ;
+.
+
+ex:CO2_70 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_70_m1 ;
+      smart:isLocatedIn ex:R70 ;			
+.
+
+ex:CO2_70_m1 rdf:type saref:Measurement;
+			saref:hasValue "1864"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_70 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R70 ;
+.
+
+ex:CO2_71 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_71_m1 ;
+      smart:isLocatedIn ex:R71 ;			
+.
+
+ex:CO2_71_m1 rdf:type saref:Measurement;
+			saref:hasValue "3536"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_71 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R71 ;
+.
+
+ex:CO2_72 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_72_m1 ;
+      smart:isLocatedIn ex:R72 ;			
+.
+
+ex:CO2_72_m1 rdf:type saref:Measurement;
+			saref:hasValue "4580"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_72 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R72 ;
+.
+
+ex:CO2_73 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_73_m1 ;
+      smart:isLocatedIn ex:R73 ;			
+.
+
+ex:CO2_73_m1 rdf:type saref:Measurement;
+			saref:hasValue "3989"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_73 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R73 ;
+.
+
+ex:CO2_74 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_74_m1 ;
+      smart:isLocatedIn ex:R74 ;			
+.
+
+ex:CO2_74_m1 rdf:type saref:Measurement;
+			saref:hasValue "2542"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_74 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R74 ;
+.
+
+ex:CO2_75 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_75_m1 ;
+      smart:isLocatedIn ex:R75 ;			
+.
+
+ex:CO2_75_m1 rdf:type saref:Measurement;
+			saref:hasValue "4313"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_75 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R75 ;
+.
+
+ex:CO2_76 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_76_m1 ;
+      smart:isLocatedIn ex:R76 ;			
+.
+
+ex:CO2_76_m1 rdf:type saref:Measurement;
+			saref:hasValue "3223"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_76 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R76 ;
+.
+
+ex:CO2_77 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_77_m1 ;
+      smart:isLocatedIn ex:R77 ;			
+.
+
+ex:CO2_77_m1 rdf:type saref:Measurement;
+			saref:hasValue "4755"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_77 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R77 ;
+.
+
+ex:CO2_78 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_78_m1 ;
+      smart:isLocatedIn ex:R78 ;			
+.
+
+ex:CO2_78_m1 rdf:type saref:Measurement;
+			saref:hasValue "4573"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_78 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R78 ;
+.
+
+ex:CO2_79 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_79_m1 ;
+      smart:isLocatedIn ex:R79 ;			
+.
+
+ex:CO2_79_m1 rdf:type saref:Measurement;
+			saref:hasValue "869"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_79 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R79 ;
+.
+
+ex:CO2_80 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_80_m1 ;
+      smart:isLocatedIn ex:R80 ;			
+.
+
+ex:CO2_80_m1 rdf:type saref:Measurement;
+			saref:hasValue "3659"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_80 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R80 ;
+.
+
+ex:CO2_81 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_81_m1 ;
+      smart:isLocatedIn ex:R81 ;			
+.
+
+ex:CO2_81_m1 rdf:type saref:Measurement;
+			saref:hasValue "2542"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_81 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R81 ;
+.
+
+ex:CO2_82 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_82_m1 ;
+      smart:isLocatedIn ex:R82 ;			
+.
+
+ex:CO2_82_m1 rdf:type saref:Measurement;
+			saref:hasValue "3323"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_82 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R82 ;
+.
+
+ex:CO2_83 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_83_m1 ;
+      smart:isLocatedIn ex:R83 ;			
+.
+
+ex:CO2_83_m1 rdf:type saref:Measurement;
+			saref:hasValue "1307"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_83 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R83 ;
+.
+
+ex:CO2_84 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_84_m1 ;
+      smart:isLocatedIn ex:R84 ;			
+.
+
+ex:CO2_84_m1 rdf:type saref:Measurement;
+			saref:hasValue "1558"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_84 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R84 ;
+.
+
+ex:CO2_85 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_85_m1 ;
+      smart:isLocatedIn ex:R85 ;			
+.
+
+ex:CO2_85_m1 rdf:type saref:Measurement;
+			saref:hasValue "3844"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_85 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R85 ;
+.
+
+ex:CO2_86 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_86_m1 ;
+      smart:isLocatedIn ex:R86 ;			
+.
+
+ex:CO2_86_m1 rdf:type saref:Measurement;
+			saref:hasValue "2420"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_86 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R86 ;
+.
+
+ex:CO2_87 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_87_m1 ;
+      smart:isLocatedIn ex:R87 ;			
+.
+
+ex:CO2_87_m1 rdf:type saref:Measurement;
+			saref:hasValue "1866"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_87 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R87 ;
+.
+
+ex:CO2_88 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_88_m1 ;
+      smart:isLocatedIn ex:R88 ;			
+.
+
+ex:CO2_88_m1 rdf:type saref:Measurement;
+			saref:hasValue "1609"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_88 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R88 ;
+.
+
+ex:CO2_89 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_89_m1 ;
+      smart:isLocatedIn ex:R89 ;			
+.
+
+ex:CO2_89_m1 rdf:type saref:Measurement;
+			saref:hasValue "4729"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_89 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R89 ;
+.
+
+ex:CO2_90 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_90_m1 ;
+      smart:isLocatedIn ex:R90 ;			
+.
+
+ex:CO2_90_m1 rdf:type saref:Measurement;
+			saref:hasValue "2301"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_90 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R90 ;
+.
+
+ex:CO2_91 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_91_m1 ;
+      smart:isLocatedIn ex:R91 ;			
+.
+
+ex:CO2_91_m1 rdf:type saref:Measurement;
+			saref:hasValue "1455"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_91 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R91 ;
+.
+
+ex:CO2_92 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_92_m1 ;
+      smart:isLocatedIn ex:R92 ;			
+.
+
+ex:CO2_92_m1 rdf:type saref:Measurement;
+			saref:hasValue "652"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_92 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R92 ;
+.
+
+ex:CO2_93 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_93_m1 ;
+      smart:isLocatedIn ex:R93 ;			
+.
+
+ex:CO2_93_m1 rdf:type saref:Measurement;
+			saref:hasValue "2321"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_93 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R93 ;
+.
+
+ex:CO2_94 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_94_m1 ;
+      smart:isLocatedIn ex:R94 ;			
+.
+
+ex:CO2_94_m1 rdf:type saref:Measurement;
+			saref:hasValue "3585"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_94 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R94 ;
+.
+
+ex:CO2_95 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_95_m1 ;
+      smart:isLocatedIn ex:R95 ;			
+.
+
+ex:CO2_95_m1 rdf:type saref:Measurement;
+			saref:hasValue "2083"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_95 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R95 ;
+.
+
+ex:CO2_96 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_96_m1 ;
+      smart:isLocatedIn ex:R96 ;			
+.
+
+ex:CO2_96_m1 rdf:type saref:Measurement;
+			saref:hasValue "637"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_96 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R96 ;
+.
+
+ex:CO2_97 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_97_m1 ;
+      smart:isLocatedIn ex:R97 ;			
+.
+
+ex:CO2_97_m1 rdf:type saref:Measurement;
+			saref:hasValue "3444"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_97 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R97 ;
+.
+
+ex:CO2_98 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_98_m1 ;
+      smart:isLocatedIn ex:R98 ;			
+.
+
+ex:CO2_98_m1 rdf:type saref:Measurement;
+			saref:hasValue "142"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_98 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R98 ;
+.
+
+ex:CO2_99 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_99_m1 ;
+      smart:isLocatedIn ex:R99 ;			
+.
+
+ex:CO2_99_m1 rdf:type saref:Measurement;
+			saref:hasValue "1533"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_99 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R99 ;
+.
+
+ex:CO2_100 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_100_m1 ;
+      smart:isLocatedIn ex:R100 ;			
+.
+
+ex:CO2_100_m1 rdf:type saref:Measurement;
+			saref:hasValue "1978"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_100 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R100 ;
+.
+
+ex:CO2_101 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_101_m1 ;
+      smart:isLocatedIn ex:R101 ;			
+.
+
+ex:CO2_101_m1 rdf:type saref:Measurement;
+			saref:hasValue "3992"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_101 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R101 ;
+.
+
+ex:CO2_102 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_102_m1 ;
+      smart:isLocatedIn ex:R102 ;			
+.
+
+ex:CO2_102_m1 rdf:type saref:Measurement;
+			saref:hasValue "1986"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_102 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R102 ;
+.
+
+ex:CO2_103 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_103_m1 ;
+      smart:isLocatedIn ex:R103 ;			
+.
+
+ex:CO2_103_m1 rdf:type saref:Measurement;
+			saref:hasValue "1582"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_103 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R103 ;
+.
+
+ex:CO2_104 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_104_m1 ;
+      smart:isLocatedIn ex:R104 ;			
+.
+
+ex:CO2_104_m1 rdf:type saref:Measurement;
+			saref:hasValue "3519"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_104 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R104 ;
+.
+
+ex:CO2_105 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_105_m1 ;
+      smart:isLocatedIn ex:R105 ;			
+.
+
+ex:CO2_105_m1 rdf:type saref:Measurement;
+			saref:hasValue "2645"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_105 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R105 ;
+.
+
+ex:CO2_106 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_106_m1 ;
+      smart:isLocatedIn ex:R106 ;			
+.
+
+ex:CO2_106_m1 rdf:type saref:Measurement;
+			saref:hasValue "3958"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_106 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R106 ;
+.
+
+ex:CO2_107 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_107_m1 ;
+      smart:isLocatedIn ex:R107 ;			
+.
+
+ex:CO2_107_m1 rdf:type saref:Measurement;
+			saref:hasValue "657"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_107 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R107 ;
+.
+
+ex:CO2_108 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_108_m1 ;
+      smart:isLocatedIn ex:R108 ;			
+.
+
+ex:CO2_108_m1 rdf:type saref:Measurement;
+			saref:hasValue "569"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_108 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R108 ;
+.
+
+ex:CO2_109 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_109_m1 ;
+      smart:isLocatedIn ex:R109 ;			
+.
+
+ex:CO2_109_m1 rdf:type saref:Measurement;
+			saref:hasValue "4673"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_109 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R109 ;
+.
+
+ex:CO2_110 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_110_m1 ;
+      smart:isLocatedIn ex:R110 ;			
+.
+
+ex:CO2_110_m1 rdf:type saref:Measurement;
+			saref:hasValue "3581"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_110 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R110 ;
+.
+
+ex:CO2_111 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_111_m1 ;
+      smart:isLocatedIn ex:R111 ;			
+.
+
+ex:CO2_111_m1 rdf:type saref:Measurement;
+			saref:hasValue "4327"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_111 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R111 ;
+.
+
+ex:CO2_112 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_112_m1 ;
+      smart:isLocatedIn ex:R112 ;			
+.
+
+ex:CO2_112_m1 rdf:type saref:Measurement;
+			saref:hasValue "3154"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_112 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R112 ;
+.
+
+ex:CO2_113 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_113_m1 ;
+      smart:isLocatedIn ex:R113 ;			
+.
+
+ex:CO2_113_m1 rdf:type saref:Measurement;
+			saref:hasValue "696"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_113 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R113 ;
+.
+
+ex:CO2_114 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_114_m1 ;
+      smart:isLocatedIn ex:R114 ;			
+.
+
+ex:CO2_114_m1 rdf:type saref:Measurement;
+			saref:hasValue "1834"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_114 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R114 ;
+.
+
+ex:CO2_115 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_115_m1 ;
+      smart:isLocatedIn ex:R115 ;			
+.
+
+ex:CO2_115_m1 rdf:type saref:Measurement;
+			saref:hasValue "1669"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_115 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R115 ;
+.
+
+ex:CO2_116 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_116_m1 ;
+      smart:isLocatedIn ex:R116 ;			
+.
+
+ex:CO2_116_m1 rdf:type saref:Measurement;
+			saref:hasValue "433"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_116 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R116 ;
+.
+
+ex:CO2_117 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_117_m1 ;
+      smart:isLocatedIn ex:R117 ;			
+.
+
+ex:CO2_117_m1 rdf:type saref:Measurement;
+			saref:hasValue "2835"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_117 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R117 ;
+.
+
+ex:CO2_118 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_118_m1 ;
+      smart:isLocatedIn ex:R118 ;			
+.
+
+ex:CO2_118_m1 rdf:type saref:Measurement;
+			saref:hasValue "3687"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_118 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R118 ;
+.
+
+ex:CO2_119 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_119_m1 ;
+      smart:isLocatedIn ex:R119 ;			
+.
+
+ex:CO2_119_m1 rdf:type saref:Measurement;
+			saref:hasValue "2465"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_119 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R119 ;
+.
+
+ex:CO2_120 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_120_m1 ;
+      smart:isLocatedIn ex:R120 ;			
+.
+
+ex:CO2_120_m1 rdf:type saref:Measurement;
+			saref:hasValue "2545"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_120 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R120 ;
+.
+
+ex:CO2_121 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_121_m1 ;
+      smart:isLocatedIn ex:R121 ;			
+.
+
+ex:CO2_121_m1 rdf:type saref:Measurement;
+			saref:hasValue "4390"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_121 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R121 ;
+.
+
+ex:CO2_122 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_122_m1 ;
+      smart:isLocatedIn ex:R122 ;			
+.
+
+ex:CO2_122_m1 rdf:type saref:Measurement;
+			saref:hasValue "2734"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_122 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R122 ;
+.
+
+ex:CO2_123 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_123_m1 ;
+      smart:isLocatedIn ex:R123 ;			
+.
+
+ex:CO2_123_m1 rdf:type saref:Measurement;
+			saref:hasValue "381"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_123 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R123 ;
+.
+
+ex:CO2_124 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_124_m1 ;
+      smart:isLocatedIn ex:R124 ;			
+.
+
+ex:CO2_124_m1 rdf:type saref:Measurement;
+			saref:hasValue "458"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_124 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R124 ;
+.
+
+ex:CO2_125 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_125_m1 ;
+      smart:isLocatedIn ex:R125 ;			
+.
+
+ex:CO2_125_m1 rdf:type saref:Measurement;
+			saref:hasValue "2303"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_125 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R125 ;
+.
+
+ex:CO2_126 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_126_m1 ;
+      smart:isLocatedIn ex:R126 ;			
+.
+
+ex:CO2_126_m1 rdf:type saref:Measurement;
+			saref:hasValue "3522"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_126 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R126 ;
+.
+
+ex:CO2_127 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_127_m1 ;
+      smart:isLocatedIn ex:R127 ;			
+.
+
+ex:CO2_127_m1 rdf:type saref:Measurement;
+			saref:hasValue "4779"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_127 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R127 ;
+.
+
+ex:CO2_128 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_128_m1 ;
+      smart:isLocatedIn ex:R128 ;			
+.
+
+ex:CO2_128_m1 rdf:type saref:Measurement;
+			saref:hasValue "2182"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_128 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R128 ;
+.
+
+ex:CO2_129 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_129_m1 ;
+      smart:isLocatedIn ex:R129 ;			
+.
+
+ex:CO2_129_m1 rdf:type saref:Measurement;
+			saref:hasValue "2988"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_129 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R129 ;
+.
+
+ex:CO2_130 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_130_m1 ;
+      smart:isLocatedIn ex:R130 ;			
+.
+
+ex:CO2_130_m1 rdf:type saref:Measurement;
+			saref:hasValue "640"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_130 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R130 ;
+.
+
+ex:CO2_131 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_131_m1 ;
+      smart:isLocatedIn ex:R131 ;			
+.
+
+ex:CO2_131_m1 rdf:type saref:Measurement;
+			saref:hasValue "652"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_131 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R131 ;
+.
+
+ex:CO2_132 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_132_m1 ;
+      smart:isLocatedIn ex:R132 ;			
+.
+
+ex:CO2_132_m1 rdf:type saref:Measurement;
+			saref:hasValue "3798"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_132 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R132 ;
+.
+
+ex:CO2_133 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_133_m1 ;
+      smart:isLocatedIn ex:R133 ;			
+.
+
+ex:CO2_133_m1 rdf:type saref:Measurement;
+			saref:hasValue "471"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_133 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R133 ;
+.
+
+ex:CO2_134 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_134_m1 ;
+      smart:isLocatedIn ex:R134 ;			
+.
+
+ex:CO2_134_m1 rdf:type saref:Measurement;
+			saref:hasValue "833"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_134 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R134 ;
+.
+
+ex:CO2_135 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_135_m1 ;
+      smart:isLocatedIn ex:R135 ;			
+.
+
+ex:CO2_135_m1 rdf:type saref:Measurement;
+			saref:hasValue "2594"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_135 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R135 ;
+.
+
+ex:CO2_136 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_136_m1 ;
+      smart:isLocatedIn ex:R136 ;			
+.
+
+ex:CO2_136_m1 rdf:type saref:Measurement;
+			saref:hasValue "1718"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_136 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R136 ;
+.
+
+ex:CO2_137 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_137_m1 ;
+      smart:isLocatedIn ex:R137 ;			
+.
+
+ex:CO2_137_m1 rdf:type saref:Measurement;
+			saref:hasValue "4007"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_137 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R137 ;
+.
+
+ex:CO2_138 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_138_m1 ;
+      smart:isLocatedIn ex:R138 ;			
+.
+
+ex:CO2_138_m1 rdf:type saref:Measurement;
+			saref:hasValue "3648"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_138 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R138 ;
+.
+
+ex:CO2_139 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_139_m1 ;
+      smart:isLocatedIn ex:R139 ;			
+.
+
+ex:CO2_139_m1 rdf:type saref:Measurement;
+			saref:hasValue "2384"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_139 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R139 ;
+.
+
+ex:CO2_140 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_140_m1 ;
+      smart:isLocatedIn ex:R140 ;			
+.
+
+ex:CO2_140_m1 rdf:type saref:Measurement;
+			saref:hasValue "4684"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_140 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R140 ;
+.
+
+ex:CO2_141 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_141_m1 ;
+      smart:isLocatedIn ex:R141 ;			
+.
+
+ex:CO2_141_m1 rdf:type saref:Measurement;
+			saref:hasValue "4291"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_141 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R141 ;
+.
+
+ex:CO2_142 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_142_m1 ;
+      smart:isLocatedIn ex:R142 ;			
+.
+
+ex:CO2_142_m1 rdf:type saref:Measurement;
+			saref:hasValue "3148"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_142 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R142 ;
+.
+
+ex:CO2_143 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_143_m1 ;
+      smart:isLocatedIn ex:R143 ;			
+.
+
+ex:CO2_143_m1 rdf:type saref:Measurement;
+			saref:hasValue "443"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_143 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R143 ;
+.
+
+ex:CO2_144 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_144_m1 ;
+      smart:isLocatedIn ex:R144 ;			
+.
+
+ex:CO2_144_m1 rdf:type saref:Measurement;
+			saref:hasValue "3945"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_144 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R144 ;
+.
+
+ex:CO2_145 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_145_m1 ;
+      smart:isLocatedIn ex:R145 ;			
+.
+
+ex:CO2_145_m1 rdf:type saref:Measurement;
+			saref:hasValue "2505"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_145 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R145 ;
+.
+
+ex:CO2_146 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_146_m1 ;
+      smart:isLocatedIn ex:R146 ;			
+.
+
+ex:CO2_146_m1 rdf:type saref:Measurement;
+			saref:hasValue "2142"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_146 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R146 ;
+.
+
+ex:CO2_147 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_147_m1 ;
+      smart:isLocatedIn ex:R147 ;			
+.
+
+ex:CO2_147_m1 rdf:type saref:Measurement;
+			saref:hasValue "2393"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_147 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R147 ;
+.
+
+ex:CO2_148 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_148_m1 ;
+      smart:isLocatedIn ex:R148 ;			
+.
+
+ex:CO2_148_m1 rdf:type saref:Measurement;
+			saref:hasValue "1198"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_148 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R148 ;
+.
+
+ex:CO2_149 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_149_m1 ;
+      smart:isLocatedIn ex:R149 ;			
+.
+
+ex:CO2_149_m1 rdf:type saref:Measurement;
+			saref:hasValue "2752"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_149 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OnState ;			
+      smart:isLocatedIn ex:R149 ;
+.
+
+ex:CO2_150 rdf:type smart:CO2 ;
+      saref:makesMeasurement ex:CO2_150_m1 ;
+      smart:isLocatedIn ex:R150 ;			
+.
+
+ex:CO2_150_m1 rdf:type saref:Measurement;
+			saref:hasValue "211"^^xsd:float ;
+      saref:isMeasuredIn om:partsPerMillion ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:PRESENCE_150 rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:R150 ;
+.

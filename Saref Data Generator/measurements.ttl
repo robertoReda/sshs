@@ -1,0 +1,253 @@
+
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix om: <http://www.wurvoc.org/vocabularies/om-1.8/> .
+@prefix ex: <http://example.com/> .
+@prefix smart: <http://example.com/smarthouse/> .
+
+# Addons
+
+<https://interconnectproject.eu/example/> rdf:type owl:Ontology ;
+owl:imports <https://saref.etsi.org/core/> ;		
+.
+
+om:degree_Celsius rdf:type saref:TemperatureUnit ;
+					        rdfs:label "Degree Celsius"
+.
+
+ex:OnState rdf:type saref:OnState .
+ex:OffState rdf:type saref:OffState .
+ex:CloseState rdf:type saref:CloseState .
+ex:OpenState rdf:type saref:OpenState .
+
+ex:House rdf:type saref:FeatureOfInterest ;
+         rdf:type smart:House ;
+.
+
+ex:LivingRoom rdf:type saref:FeatureOfInterest ;
+              rdf:type smart:Room 
+.
+ex:Bedroom rdf:type saref:FeatureOfInterest  ;
+              rdf:type smart:Room 
+.
+ex:Kitchen rdf:type saref:FeatureOfInterest  ;
+              rdf:type smart:Room 
+.
+ex:Entrance rdf:type saref:FeatureOfInterest  ;
+              rdf:type smart:Room 
+.
+ex:Terrace rdf:type saref:FeatureOfInterest  ;
+              rdf:type smart:Outdoor 
+.
+ex:UtilityRoom rdf:type saref:FeatureOfInterest  ;
+              rdf:type smart:Room 
+.
+
+ex:MainClock rdf:type smart:SmartClock ;
+             saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+             smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:LK1E rdf:type smart:SmartLock ;
+        saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+        smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+        saref:hasState ex:CloseState ;
+        smart:isLocatedIn ex:Entrance ;
+.
+
+#-----------
+
+
+ex:T1T rdf:type saref:TemperatureSensor ;
+      saref:makesMeasurement ex:T1T_m1 ;
+      smart:isLocatedIn ex:Terrace ;			
+.
+
+ex:T1T_m1 rdf:type saref:Measurement;
+			saref:hasValue "25.5"^^xsd:float ;
+      saref:isMeasuredIn om:degree_Celsius ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:T1B rdf:type saref:TemperatureSensor ;
+      saref:makesMeasurement ex:T1B_m1 ;
+      smart:isLocatedIn ex:Bedroom ;			
+.
+
+ex:T1B_m1 rdf:type saref:Measurement;
+			saref:hasValue "30.0"^^xsd:float ;
+      saref:isMeasuredIn om:degree_Celsius ;
+      saref:hasTimestamp "2020-12-02T14:31:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919460"^^xsd:integer  ;
+.
+
+ex:T1L rdf:type saref:TemperatureSensor ;
+      saref:makesMeasurement ex:T1L_m1 ;
+      smart:isLocatedIn ex:LivingRoom ;			
+.
+
+ex:T1L_m1 rdf:type saref:Measurement;
+			saref:hasValue "25.5"^^xsd:float ;
+      saref:isMeasuredIn om:degree_Celsius ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:T1E rdf:type saref:TemperatureSensor ;
+      saref:makesMeasurement ex:T1E_m1 ;
+      smart:isLocatedIn ex:Entrance ;			
+.
+
+ex:T1E_m1 rdf:type saref:Measurement;
+			saref:hasValue "30.0"^^xsd:float ;
+      saref:isMeasuredIn om:degree_Celsius ;
+      saref:hasTimestamp "2020-12-02T14:31:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919460"^^xsd:integer  ;
+.
+
+ex:T1K rdf:type saref:TemperatureSensor ;
+      saref:makesMeasurement ex:T1K_m1 ;
+      smart:isLocatedIn ex:Kitchen ;			
+.
+
+ex:T1K_m1 rdf:type saref:Measurement;
+			saref:hasValue "25.5"^^xsd:float ;
+      saref:isMeasuredIn om:degree_Celsius ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+
+ex:W1L rdf:type saref:DoorSwitch ;
+            rdf:type smart:Window ;
+      saref:hasState ex:CloseState ;
+      smart:isLocatedIn ex:LivingRoom ;
+.
+
+ex:W2L rdf:type saref:DoorSwitch ;
+            rdf:type smart:Window ;
+      saref:hasState ex:CloseState ;
+      smart:isLocatedIn ex:LivingRoom ;
+.
+
+ex:D1L rdf:type saref:DoorSwitch ;
+            rdf:type smart:Door ;
+      saref:hasState ex:CloseState ;
+      smart:isLocatedIn ex:LivingRoom ;
+.
+
+ex:W1B rdf:type saref:DoorSwitch ;
+            rdf:type smart:Window ;
+      saref:hasState ex:CloseState ;
+      smart:isLocatedIn ex:Bedroom ;
+.
+
+ex:D1B rdf:type saref:DoorSwitch ;
+            rdf:type smart:Door ;
+      saref:hasState ex:CloseState ;
+      smart:isLocatedIn ex:Bedroom ;
+.
+
+ex:D1E rdf:type saref:DoorSwitch ;
+            rdf:type smart:Door ;
+      saref:hasState ex:CloseState ;
+      smart:isLocatedIn ex:Entrance ;
+.
+
+ex:W1K rdf:type saref:DoorSwitch ;
+            rdf:type smart:Window ;
+      saref:hasState ex:CloseState ;
+      smart:isLocatedIn ex:Kitchen ;
+.
+
+ex:D1K rdf:type saref:DoorSwitch ;
+            rdf:type smart:Door ;
+      saref:hasState ex:CloseState ;
+      smart:isLocatedIn ex:Kitchen ;
+.
+
+ex:D1U rdf:type saref:DoorSwitch ;
+            rdf:type smart:Door ;
+      saref:hasState ex:CloseState ;
+      smart:isLocatedIn ex:UtilityRoom ;
+.
+
+ex:L1T rdf:type saref:LightSwitch ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:Terrace ;
+.
+
+ex:L1B rdf:type saref:LightSwitch ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:Bedroom ;
+.
+
+ex:L1U rdf:type saref:LightSwitch ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:UtilityRoom ;
+.
+
+ex:L1L rdf:type saref:LightSwitch ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:LivingRoom ;
+.
+
+ex:L1E rdf:type saref:LightSwitch ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:Entrance ;
+.
+
+ex:L1K rdf:type saref:LightSwitch ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:Kitchen ;
+.
+
+ex:P1T rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:Terrace ;
+.
+
+ex:P1B rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:Bedroom ;
+.
+
+ex:P1U rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:UtilityRoom ;
+.
+
+ex:P1L rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:LivingRoom ;
+.
+
+ex:P1E rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:Entrance ;
+.
+
+ex:P2E rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:Entrance ;
+.
+
+ex:P1K rdf:type smart:SmartPresence ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:Kitchen ;
+.
+
+ex:B1E rdf:type saref:Device ;
+            rdf:type smart:SmartButton ;
+      saref:hasState ex:OffState ;			
+      smart:isLocatedIn ex:Entrance ;
+      saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+      smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+.
+ex:WS1 rdf:type smart:SmartWeatherStation ;
+       saref:hasTimestamp "2020-12-02T14:30:00"^^xsd:dateTime  ;
+       smart:hasUnixTimestamp "1606919400"^^xsd:integer  ;
+       smart:hasSunriseTime 1634018420 ;
+       smart:hasSunsetTime 1634057589 ;
+       smart:hasTemperature 9.29 ;
+       smart:hasWeatherCondition smart:WeatherConditionClear ;
+.
